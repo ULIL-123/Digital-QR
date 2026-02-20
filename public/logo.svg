@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff"/>
+      <stop offset="50%" stop-color="#ccff00"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+    <filter id="ultraGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Hexagonal Portal Frame -->
+  <path d="M256 20 L470 142 V370 L256 492 L42 370 V142 Z" fill="#020617" stroke="url(#neonGrad)" stroke-width="16" stroke-linejoin="round" />
+  
+  <!-- Isometric 4D Structure -->
+  <g filter="url(#ultraGlow)">
+    <!-- '4' Left Pillar -->
+    <path d="M180 160 L180 320 L240 320" stroke="#00f2ff" stroke-width="28" stroke-linecap="round" />
+    <!-- '4' Bridge -->
+    <path d="M180 240 L300 240" stroke="#ccff00" stroke-width="28" stroke-linecap="round" />
+    <!-- 'D' Curve / 4 Right Pillar -->
+    <path d="M300 160 V352 Q400 352 400 256 Q400 160 300 160 Z" fill="#020617" stroke="#ff00ff" stroke-width="24" stroke-linejoin="round" />
+  </g>
+
+  <!-- Embedded DIGITAL Badge -->
+  <rect x="210" y="235" width="130" height="42" rx="10" fill="#020617" stroke="url(#neonGrad)" stroke-width="3" />
+  <text x="275" y="265" font-family="Arial, sans-serif" font-weight="950" font-size="20" text-anchor="middle" fill="#00f2ff" letter-spacing="3">DIGITAL</text>
+
+  <!-- Accents -->
+  <circle cx="256" cy="20" r="10" fill="#00f2ff" />
+  <circle cx="256" cy="492" r="10" fill="#ff00ff" />
+</svg>

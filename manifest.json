@@ -1,0 +1,52 @@
+
+{
+  "name": "HADIRKU Portal - SDN 4 Kronggen",
+  "short_name": "Hadirku",
+  "description": "Portal Absensi Digital SDN 4 Kronggen berbasis Web & PWA. Mendukung QR Code dan RFID.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "id": "hadirku-portal-v1",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay",
+    "minimal-ui"
+  ],
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "portrait",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://placehold.co/1080x1920/020617/00f2ff.png?text=Hadirku+4D+Portal",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "https://placehold.co/1920x1080/020617/00f2ff.png?text=Hadirku+Desktop",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

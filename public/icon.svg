@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#020617"/>
+  <defs>
+    <linearGradient id="iconNeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2ff"/>
+      <stop offset="100%" stop-color="#ff00ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Simplified 4D -->
+  <path d="M160 140 V280 H300 M260 140 V340" stroke="url(#iconNeon)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M260 140 Q380 140 380 240 Q380 340 260 340" stroke="#00f2ff" stroke-width="32" stroke-linecap="round" fill="none" />
+  <text x="256" y="440" font-family="Arial, sans-serif" font-weight="950" font-size="52" text-anchor="middle" fill="#ccff00" letter-spacing="6">4D DIGITAL</text>
+</svg>

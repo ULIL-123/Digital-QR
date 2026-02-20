@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="id" dir="ltr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <!-- Viewport optimized for mobile chrome and notch displays -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+    
+    <!-- SEO & Search Engine Optimization -->
+    <title>HADIRKU Portal - Sistem Absensi Digital Terpadu</title>
+    <meta name="description" content="Portal Absensi Digital SDN 4 Kronggen berbasis Web PWA. Mendukung QR Code, RFID, dan Pelaporan Real-time. Cepat, Aman, dan Terpercaya." />
+    <meta name="keywords" content="absensi digital, qr code, rfid sekolah, pwa, sdn 4 kronggen, hadirku portal" />
+    <meta name="author" content="SDN 4 Kronggen" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- PWA Settings -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- iOS support (Safari) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hadirku" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+
+    <!-- Google Chrome & Modern Search Engine Optimization (Fonts & Prefetch) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Black+Ops+One&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {"50":"#eef2ff","100":"#e0e7ff","200":"#c7d2fe","300":"#a5b4fc","400":"#818cf8","500":"#6366f1","600":"#4f46e5","700":"#4338ca","800":"#3730a3","900":"#312e81","950":"#1e1b4b"},
+              neon: {
+                blue: "#00f2ff",
+                pink: "#ff00ff",
+                green: "#ccff00",
+                orange: "#ff5e00",
+                purple: "#a855f7"
+              }
+            },
+            fontFamily: {
+              sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'float': 'float 5s ease-in-out infinite',
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-15px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
+        "react-qr-code": "https://aistudiocdn.com/react-qr-code@^2.0.18",
+        "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+        "jszip": "https://aistudiocdn.com/jszip@^3.10.1"
+      }
+    }
+    </script>
+    <style>
+      /* Smooth Scrolling for modern browsers */
+      html { scroll-behavior: smooth; }
+      
+      /* Webkit / Chrome Scrollbar Customization */
+      ::-webkit-scrollbar { width: 6px; height: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 20px; border: 2px solid transparent; background-clip: content-box; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      
+      /* Hide scrollbar utility */
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      /* Fix for Dynamic Viewport Height on Mobile Chrome */
+      .min-h-dvh { min-height: 100dvh; }
+      .h-dvh { height: 100dvh; }
+
+      body {
+        -webkit-tap-highlight-color: transparent;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+      }
+
+      /* Desktop PWA Frame enhancement */
+      @media screen and (display-mode: standalone) {
+        body { user-select: none; }
+      }
+    </style>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900 font-sans selection:bg-cyan-200 selection:text-cyan-900 overflow-x-hidden h-full">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
