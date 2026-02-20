@@ -198,8 +198,8 @@ const Dashboard: React.FC<{ setCurrentPage: (page: any) => void }> = ({ setCurre
                             <ClockIcon className="w-8 h-8" />
                         </div>
                         <div>
-                            <h3 className="text-2xl font-black text-slate-900 tracking-tight uppercase">Konfigurasi Jendela Waktu</h3>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mt-1">Aturan Status Kehadiran Otomatis</p>
+                            <h3 className="text-2xl font-black text-slate-900 tracking-tight uppercase">Time Window Configuration</h3>
+                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mt-1">Automatic Attendance Status Rules</p>
                         </div>
                     </div>
 
